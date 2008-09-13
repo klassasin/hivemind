@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>MSU Hivemind</title>
+  <%= stylesheet_link_tag 'hivemind' %>
+  <%= javascript_include_tag 'prototype' %>
+</head>
+<body id="post">
+  <div id="banner">
+    <%= image_tag("rails.png") %>
+    <%= @page_title || "Hivemind" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <h1>Sidebar</h1>
+    </div>
+    <div id="main">
+      <p style="color: green"><%= flash[:notice] %></p>
+      <%= yield  %>
+      <div id="timeDiv">
+<%= link_to_remote("Want the time?",
+                   :update => "timeDiv",
+                   :url => { :action => :theTime },
+	           :position => "after") %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

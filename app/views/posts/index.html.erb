@@ -1,0 +1,10 @@
+<% for post in @posts %>
+  <div>
+    <h6><%=h post.title %></h6>
+    <p><%=h post.body %></p>
+  </div>
+<% end %>
+
+<br />
+
+<%= link_to 'New post', new_post_path %>

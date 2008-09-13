@@ -1,0 +1,11 @@
+--- 
+user: hivemind
+group: hivemind
+cwd: /var/rails/hivemind
+log_file: log/mongrel.log
+port: "3000"
+environment: development
+group: mongrel
+address: 127.0.0.1
+pid_file: tmp/pids/mongrel.pid
+servers: 3
